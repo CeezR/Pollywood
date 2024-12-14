@@ -1,2 +1,11 @@
-package dev.cesar.pollywood;public class XaiRequest {
+package dev.cesar.pollywood;
+
+import java.util.List;
+
+public record XaiRequest(
+        List<Message> messages,
+        String model,
+        boolean stream,
+        int temperature
+) {
 }
