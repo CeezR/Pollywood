@@ -1,9 +1,9 @@
 package dev.cesar.pollywood;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonValue;
 
-@JsonFormat(shape = JsonFormat.Shape.OBJECT)
+
 public enum Role {
     SYSTEM("system"),
     USER("user");
@@ -12,6 +12,11 @@ public enum Role {
 
     Role(String type) {
         this.type = type;
+    }
+
+    @JsonValue
+    public String getType() {
+        return type;
     }
 
     @JsonCreator
