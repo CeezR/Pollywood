@@ -1,7 +1,8 @@
-package dev.cesar.pollywood;
+package dev.cesar.pollywood.model;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import dev.cesar.pollywood.TestDataFactory;
 import org.junit.jupiter.api.Test;
 import org.springframework.core.io.ClassPathResource;
 

@@ -1,4 +1,4 @@
-package dev.cesar.pollywood;
+package dev.cesar.pollywood.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;

@@ -1,4 +1,4 @@
-package dev.cesar.pollywood;
+package dev.cesar.pollywood.model;
 
 import java.util.List;
 

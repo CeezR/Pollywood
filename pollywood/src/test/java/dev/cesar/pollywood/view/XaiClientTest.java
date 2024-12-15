@@ -1,6 +1,8 @@
-package dev.cesar.pollywood;
+package dev.cesar.pollywood.view;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import dev.cesar.pollywood.TestDataFactory;
+import dev.cesar.pollywood.model.XaiRequest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.client.RestClientTest;

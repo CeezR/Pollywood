@@ -1,5 +1,6 @@
-package dev.cesar.pollywood;
+package dev.cesar.pollywood.view;
 
+import dev.cesar.pollywood.model.XaiRequest;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
