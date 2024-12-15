@@ -1,6 +1,7 @@
 package dev.cesar.pollywood;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 
@@ -16,10 +17,11 @@ public class XaiClient {
         this.restClient = restClientBuilder.build();
     }
 
-    public String propt() {
+    public String propt(XaiRequest request) {
         return restClient
-                .get()
+                .method(HttpMethod.GET)
                 .uri("https://api.x.ai/v1/chat/completions")
+                .body(request)
                 .header("Content-Type", "application/json")
                 .header("Authorization", "Bearer " + apiKey)
                 .retrieve()
