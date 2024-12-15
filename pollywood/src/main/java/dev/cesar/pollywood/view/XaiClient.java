@@ -4,7 +4,6 @@ import dev.cesar.pollywood.model.Message;
 import dev.cesar.pollywood.model.XaiRequest;
 import dev.cesar.pollywood.model.XaiResponse;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 
@@ -24,7 +23,7 @@ public class XaiClient {
 
     public Message prompt(XaiRequest request) {
         return Objects.requireNonNull(restClient
-                        .method(HttpMethod.GET)
+                        .post()
                         .uri("https://api.x.ai/v1/chat/completions")
                         .body(request)
                         .header("Content-Type", "application/json")
