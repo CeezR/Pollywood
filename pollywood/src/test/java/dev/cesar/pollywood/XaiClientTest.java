@@ -1,5 +1,6 @@
 package dev.cesar.pollywood;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.client.RestClientTest;
@@ -21,17 +22,21 @@ class XaiClientTest {
     XaiClient client;
     @Autowired
     MockRestServiceServer server;
+    @Autowired
+    ObjectMapper mapper;
 
     @Test
     void propt() throws IOException {
+        XaiRequest request = TestDataFactory.defaultRequest();
         String response = new ClassPathResource("xaiExampleResponse.json").getContentAsString(StandardCharsets.UTF_8);
 
         server.expect(requestTo("https://api.x.ai/v1/chat/completions"))
                 .andExpect(method(HttpMethod.GET))
                 .andExpect(header("Content-Type", "application/json"))
+                .andExpect(content().json(mapper.writeValueAsString(request)))
                 .andRespond(withSuccess(response, MediaType.APPLICATION_JSON));
 
-        String actualResponse = client.propt();
+        String actualResponse = client.propt(request);
 
         server.verify();
 
