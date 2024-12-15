@@ -17,7 +17,7 @@ public class XaiClient {
         this.restClient = restClientBuilder.build();
     }
 
-    public String propt(XaiRequest request) {
+    public String prompt(XaiRequest request) {
         return restClient
                 .method(HttpMethod.GET)
                 .uri("https://api.x.ai/v1/chat/completions")

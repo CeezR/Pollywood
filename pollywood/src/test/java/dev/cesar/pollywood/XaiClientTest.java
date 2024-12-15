@@ -26,7 +26,7 @@ class XaiClientTest {
     ObjectMapper mapper;
 
     @Test
-    void propt() throws IOException {
+    void prompt() throws IOException {
         XaiRequest request = TestDataFactory.defaultRequest();
         String response = new ClassPathResource("xaiExampleResponse.json").getContentAsString(StandardCharsets.UTF_8);
 
@@ -36,7 +36,7 @@ class XaiClientTest {
                 .andExpect(content().json(mapper.writeValueAsString(request)))
                 .andRespond(withSuccess(response, MediaType.APPLICATION_JSON));
 
-        String actualResponse = client.propt(request);
+        String actualResponse = client.prompt(request);
 
         server.verify();
 
