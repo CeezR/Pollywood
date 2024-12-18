@@ -2,9 +2,9 @@ package dev.cesar.pollywood.view;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dev.cesar.pollywood.TestDataFactory;
-import dev.cesar.pollywood.model.Message;
-import dev.cesar.pollywood.model.XaiRequest;
-import dev.cesar.pollywood.model.XaiResponse;
+import dev.cesar.pollywood.model.xai.Message;
+import dev.cesar.pollywood.model.xai.XaiRequest;
+import dev.cesar.pollywood.model.xai.XaiResponse;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.client.RestClientTest;
@@ -33,7 +33,7 @@ class XaiClientTest {
         XaiResponse response = TestDataFactory.defaultResponse();
 
         server.expect(requestTo("https://api.x.ai/v1/chat/completions"))
-                .andExpect(method(HttpMethod.GET))
+                .andExpect(method(HttpMethod.POST))
                 .andExpect(header("Content-Type", "application/json"))
                 .andExpect(content().json(mapper.writeValueAsString(request)))
                 .andRespond(withSuccess(mapper.writeValueAsString(response), MediaType.APPLICATION_JSON));
