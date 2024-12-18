@@ -1,4 +1,4 @@
-package dev.cesar.pollywood.model;
+package dev.cesar.pollywood.model.xai;
 
 import java.util.List;
 import java.util.UUID;

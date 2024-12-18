@@ -1,8 +1,8 @@
 package dev.cesar.pollywood.view;
 
-import dev.cesar.pollywood.model.Message;
-import dev.cesar.pollywood.model.XaiRequest;
-import dev.cesar.pollywood.model.XaiResponse;
+import dev.cesar.pollywood.model.xai.Message;
+import dev.cesar.pollywood.model.xai.XaiRequest;
+import dev.cesar.pollywood.model.xai.XaiResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;

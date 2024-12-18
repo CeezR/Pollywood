@@ -1,8 +1,8 @@
 package dev.cesar.pollywood;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import dev.cesar.pollywood.model.XaiRequest;
-import dev.cesar.pollywood.model.XaiResponse;
+import dev.cesar.pollywood.model.xai.XaiRequest;
+import dev.cesar.pollywood.model.xai.XaiResponse;
 import org.springframework.core.io.ClassPathResource;
 
 import java.io.IOException;
